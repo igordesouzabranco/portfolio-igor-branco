@@ -325,10 +325,21 @@ section {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
+.skill-card:hover .skill-icon,
+.skill-card:hover .skill-name {
+    background: linear-gradient(90deg, var(--accent-green), var(--accent-blue), var(--accent-purple), #ff0000, #ffff00);
+    background-size: 300% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: colorShift 2.5s linear infinite;
+}
+
 .skill-icon {
     font-size: 2.5rem;
     color: var(--accent-blue);
     margin-bottom: var(--spacing-md);
+    transition: var(--transition-fast);
 }
 
 .skill-name {
@@ -378,6 +389,16 @@ section {
     border-color: var(--accent-blue);
     transform: translateY(-5px);
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+.project-card:hover .project-title,
+.project-card:hover .placeholder-img {
+    background: linear-gradient(90deg, var(--accent-green), var(--accent-blue), var(--accent-purple), #ff0000, #ffff00);
+    background-size: 300% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: colorShift 2.5s linear infinite;
 }
 
 .project-image {
