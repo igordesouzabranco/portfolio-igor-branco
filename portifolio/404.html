@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 | Dev Igor Branco</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <main class="error-page">
+        <div class="error-container">
+            <div class="error-terminal">
+                <div class="terminal-header">
+                    <div class="terminal-buttons">
+                        <span class="btn-close"></span>
+                        <span class="btn-minimize"></span>
+                        <span class="btn-maximize"></span>
+                    </div>
+                    <span class="terminal-title">igor@dev:~</span>
+                </div>
+                <div class="terminal-body">
+                    <p><span class="prompt">&gt;</span> cd /esta-pagina</p>
+                    <p class="output error-output">bash: cd: /esta-pagina: No such file or directory</p>
+                    <p><span class="prompt">&gt;</span> echo $?</p>
+                    <p class="output">1</p>
+                    <p><span class="prompt">&gt;</span> <span class="cursor">_</span></p>
+                </div>
+            </div>
+            <h1 class="error-code">404</h1>
+            <p class="error-message">Página não encontrada</p>
+            <p class="error-description">O repositório que você procura não existe ou foi movido para outro branch.</p>
+            <a href="/" class="btn btn-primary">
+                <span class="prompt">&gt;</span> cd ~/
+            </a>
+        </div>
+    </main>
+</body>
+</html>

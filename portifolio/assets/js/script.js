@@ -336,3 +336,84 @@ document.querySelectorAll('.skill-card').forEach(card => {
 
 // Console Easter egg
 console.log('%c Dev Igor Branco - Portfólio ', 'background: #3fb950; color: #0d1117; font-size: 14px; padding: 8px 12px; border-radius: 4px; font-family: monospace;');
+
+// Back to Top button
+const backToTop = document.querySelector('.back-to-top');
+
+if (backToTop) {
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            backToTop.classList.add('visible');
+        } else {
+            backToTop.classList.remove('visible');
+        }
+    });
+
+    backToTop.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+}
+
+// Project Modal
+const projectData = {
+    'ecommerce': {
+        title: 'E-Commerce Platform',
+        icon: '<i class="fas fa-code"></i>',
+        description: 'Plataforma de e-commerce completa com carrinho de compras, sistema de pagamento integrado, painel administrativo para gerenciamento de produtos e pedidos, e interface responsiva para dispositivos móveis.',
+        tags: ['React', 'Node.js', 'MongoDB', 'Stripe'],
+        github: 'https://github.com'
+    },
+    'ai-chat': {
+        title: 'AI Chat Assistant',
+        icon: '<i class="fas fa-robot"></i>',
+        description: 'Assistente virtual inteligente construído com processamento de linguagem natural (NLP). Integração com APIs externas para fornecer respostas contextuais e aprendizado contínuo.',
+        tags: ['Python', 'Django', 'OpenAI', 'WebSocket'],
+        github: 'https://github.com'
+    },
+    'task-manager': {
+        title: 'Task Manager App',
+        icon: '<i class="fas fa-mobile-alt"></i>',
+        description: 'Aplicativo de gerenciamento de tarefas multiplataforma com sincronização em nuvem, notificações inteligentes, categorização por projetos e modo offline.',
+        tags: ['React Native', 'Firebase', 'Redux'],
+        github: 'https://github.com'
+    }
+};
+
+const modal = document.getElementById('projectModal');
+const modalOverlay = modal?.querySelector('.modal-overlay');
+const modalClose = modal?.querySelector('.modal-close');
+
+function openProjectModal(projectId) {
+    const project = projectData[projectId];
+    if (!project || !modal) return;
+
+    modal.querySelector('.modal-icon').innerHTML = project.icon;
+    modal.querySelector('.modal-title').textContent = project.title;
+    modal.querySelector('.modal-description').textContent = project.description;
+    modal.querySelector('.modal-tags').innerHTML = project.tags.map(tag => `<span class="tag">${tag}</span>`).join('');
+    modal.querySelector('.modal-links a').href = project.github;
+
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+document.querySelectorAll('.project-modal-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        openProjectModal(btn.dataset.project);
+    });
+});
+
+if (modalOverlay) modalOverlay.addEventListener('click', closeModal);
+if (modalClose) modalClose.addEventListener('click', closeModal);
+
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal?.classList.contains('active')) {
+        closeModal();
+    }
+});

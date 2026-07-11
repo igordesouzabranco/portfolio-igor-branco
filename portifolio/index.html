@@ -24,6 +24,7 @@
             <nav class="nav" id="nav-menu">
                 <a href="#home" class="nav-link active">home</a>
                 <a href="#skills" class="nav-link">skills</a>
+                <a href="#experience" class="nav-link">experiências</a>
                 <a href="#projects" class="nav-link">projetos</a>
                 <a href="#about" class="nav-link">sobre</a>
                 <a href="#contact" class="nav-link">contato</a>
@@ -48,9 +49,14 @@
                         <br>
                         <span class="comment">//</span> Apaixonado por tecnologia e boas práticas de desenvolvimento.
                     </p>
-                    <a href="#contact" class="btn btn-primary">
-                        Entre em contato
-                    </a>
+                    <div class="hero-buttons">
+                        <a href="#contact" class="btn btn-primary">
+                            Entre em contato
+                        </a>
+                        <a href="assets/cv/cv.pdf" download class="btn btn-secondary">
+                            <i class="fas fa-download"></i> Baixar CV
+                        </a>
+                    </div>
                 </div>
                 <div class="hero-terminal">
                     <div class="terminal-header">
@@ -123,13 +129,65 @@
             </div>
         </section>
 
+        <section id="experience" class="experience">
+            <div class="container">
+                <h2 class="section-title">
+                    <span class="prompt">&gt;</span> Experiências
+                </h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">2024 - Atual</span>
+                            <h3 class="timeline-title">Desenvolvedor Full Stack</h3>
+                            <h4 class="timeline-company">Empresa Atual</h4>
+                            <p class="timeline-description">Desenvolvimento de aplicações web completas com React, Node.js e PostgreSQL. Implementação de CI/CD e melhoria de performance.</p>
+                            <div class="timeline-tags">
+                                <span class="tag">React</span>
+                                <span class="tag">Node.js</span>
+                                <span class="tag">PostgreSQL</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">2023 - 2024</span>
+                            <h3 class="timeline-title">Desenvolvedor Frontend</h3>
+                            <h4 class="timeline-company">Empresa Anterior</h4>
+                            <p class="timeline-description">Criação de interfaces responsivas e acessíveis. Migração de sistema legado para React com melhoria significativa de usabilidade.</p>
+                            <div class="timeline-tags">
+                                <span class="tag">React</span>
+                                <span class="tag">TypeScript</span>
+                                <span class="tag">CSS</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">2022 - 2023</span>
+                            <h3 class="timeline-title">Estagiário de Desenvolvimento</h3>
+                            <h4 class="timeline-company">Primeira Empresa</h4>
+                            <p class="timeline-description">Aprendizado em desenvolvimento web, participação em projetos internos e manutenção de sistemas existentes.</p>
+                            <div class="timeline-tags">
+                                <span class="tag">JavaScript</span>
+                                <span class="tag">Python</span>
+                                <span class="tag">Git</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section id="projects" class="projects">
             <div class="container">
                 <h2 class="section-title">
                     <span class="prompt">&gt;</span> Projetos
                 </h2>
                 <div class="projects-grid">
-                    <div class="project-card">
+                    <div class="project-card" data-project="ecommerce">
                         <div class="project-image">
                             <div class="placeholder-img">
                                 <i class="fas fa-code"></i>
@@ -143,12 +201,12 @@
                                 <span class="tag">Node.js</span>
                                 <span class="tag">MongoDB</span>
                             </div>
-                            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="project-link">
-                                <i class="fab fa-github"></i> Ver no GitHub
-                            </a>
+                            <button class="project-link project-modal-btn" data-project="ecommerce">
+                                <i class="fas fa-info-circle"></i> Ver detalhes
+                            </button>
                         </div>
                     </div>
-                    <div class="project-card">
+                    <div class="project-card" data-project="ai-chat">
                         <div class="project-image">
                             <div class="placeholder-img">
                                 <i class="fas fa-robot"></i>
@@ -162,12 +220,12 @@
                                 <span class="tag">Django</span>
                                 <span class="tag">OpenAI</span>
                             </div>
-                            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="project-link">
-                                <i class="fab fa-github"></i> Ver no GitHub
-                            </a>
+                            <button class="project-link project-modal-btn" data-project="ai-chat">
+                                <i class="fas fa-info-circle"></i> Ver detalhes
+                            </button>
                         </div>
                     </div>
-                    <div class="project-card">
+                    <div class="project-card" data-project="task-manager">
                         <div class="project-image">
                             <div class="placeholder-img">
                                 <i class="fas fa-mobile-alt"></i>
@@ -180,9 +238,9 @@
                                 <span class="tag">React Native</span>
                                 <span class="tag">Firebase</span>
                             </div>
-                            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="project-link">
-                                <i class="fab fa-github"></i> Ver no GitHub
-                            </a>
+                            <button class="project-link project-modal-btn" data-project="task-manager">
+                                <i class="fas fa-info-circle"></i> Ver detalhes
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -297,6 +355,30 @@
             </p>
         </div>
     </footer>
+
+    <button class="back-to-top" aria-label="Voltar ao topo">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <div class="project-modal" id="projectModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Fechar">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-header">
+                <div class="modal-icon"></div>
+                <h3 class="modal-title"></h3>
+            </div>
+            <p class="modal-description"></p>
+            <div class="modal-tags"></div>
+            <div class="modal-links">
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                    <i class="fab fa-github"></i> Ver no GitHub
+                </a>
+            </div>
+        </div>
+    </div>
 
     <script src="assets/js/script.js" defer></script>
     <script src="assets/js/msg.js" defer></script>
