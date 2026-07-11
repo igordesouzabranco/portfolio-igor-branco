@@ -962,67 +962,18 @@ section {
 }
 
 .timeline-horizontal {
-    position: relative;
     max-width: 1000px;
     margin: 0 auto;
-    overflow-x: auto;
-    padding: 60px 0;
-}
-
-.timeline-track {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background: var(--border-color);
-    transform: translateY(-1px);
 }
 
 .timeline-items {
-    display: flex;
-    gap: var(--spacing-2xl);
-    padding: 0 var(--spacing-xl);
-    position: relative;
-    min-height: 300px;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-lg);
 }
 
 .timeline-item {
-    flex: 0 0 auto;
-    min-width: 280px;
-    max-width: 320px;
     position: relative;
-}
-
-.timeline-item:nth-child(odd) {
-    align-self: flex-start;
-    margin-top: -80px;
-}
-
-.timeline-item:nth-child(even) {
-    align-self: flex-end;
-    margin-top: 80px;
-}
-
-.timeline-dot {
-    position: absolute;
-    width: 16px;
-    height: 16px;
-    background-color: var(--accent-green);
-    border: 3px solid var(--bg-primary);
-    border-radius: 50%;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 2;
-}
-
-.timeline-item:nth-child(odd) .timeline-dot {
-    bottom: -48px;
-}
-
-.timeline-item:nth-child(even) .timeline-dot {
-    top: -48px;
 }
 
 .timeline-content {
@@ -1030,6 +981,7 @@ section {
     border: 1px solid var(--border-color);
     border-radius: var(--radius-lg);
     padding: var(--spacing-lg);
+    height: 100%;
     transition: var(--transition-normal);
 }
 
@@ -1044,12 +996,14 @@ section {
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1px;
+    margin-bottom: var(--spacing-sm);
+    display: block;
 }
 
 .timeline-title {
     font-size: 1.1rem;
     color: var(--text-primary);
-    margin: var(--spacing-sm) 0 var(--spacing-xs);
+    margin-bottom: var(--spacing-xs);
 }
 
 .timeline-company {
@@ -1075,28 +1029,7 @@ section {
 /* Timeline Responsive */
 @media (max-width: 768px) {
     .timeline-items {
-        flex-direction: column;
-        align-items: stretch;
-        min-height: auto;
-    }
-
-    .timeline-track {
-        display: none;
-    }
-
-    .timeline-dot {
-        display: none;
-    }
-
-    .timeline-item {
-        max-width: 100%;
-        min-width: 0;
-    }
-
-    .timeline-item:nth-child(odd),
-    .timeline-item:nth-child(even) {
-        align-self: stretch;
-        margin-top: 0;
+        grid-template-columns: 1fr;
     }
 }
 
