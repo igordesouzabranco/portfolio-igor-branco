@@ -11,25 +11,29 @@ if (contactForm) {
             showNotification('Por favor, preencha todos os campos.', 'error');
             return;
         }
-        createEmail(name, email, message);
-        console.log(`Mensagem de ${name} (${email}): ${message}`);
 
         const submitBtn = this.querySelector('button[type="submit"]');
         const originalText = submitBtn.innerHTML;
         submitBtn.innerHTML = '<span class="prompt">&gt;</span> Enviando...';
         submitBtn.disabled = true;
 
-        setTimeout(() => {
+        const formData = new FormData(this);
+
+        fetch('/', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: new URLSearchParams(formData).toString()
+        })
+        .then(() => {
             showNotification('Mensagem enviada com sucesso!', 'success');
             this.reset();
             submitBtn.innerHTML = originalText;
             submitBtn.disabled = false;
-        }, 1500);
+        })
+        .catch(() => {
+            showNotification('Erro ao enviar. Tente novamente.', 'error');
+            submitBtn.innerHTML = originalText;
+            submitBtn.disabled = false;
+        });
     });
-}
-
-function createEmail(name, email, message) {
-    const subject = encodeURIComponent(`Mensagem de ${name}`);
-    const body = encodeURIComponent(`Nome: ${name}\nEmail: ${email}\n\nMensagem:\n${message}`);
-    console.log(`mailto:?subject=${subject}&body=${body}`);
 }

@@ -83,16 +83,16 @@ body {
 }
 
 .logo-name {
-    transition: all 0.3s ease;
+    transition: background 0.3s ease, -webkit-text-fill-color 0.3s ease;
 }
 
 .header.scrolled .logo-name {
-    background: linear-gradient(90deg, var(--accent-green), var(--accent-blue), var(--accent-purple), #ff0000, #ffff00, var(--accent-green));
+    background: linear-gradient(90deg, var(--accent-green), var(--accent-blue), var(--accent-purple), #ff0000, #ffff00);
     background-size: 300% 100%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    animation: colorShift 4s ease infinite;
+    animation: colorShift 2.5s linear infinite;
 }
 
 .prompt {
@@ -169,18 +169,17 @@ body {
     font-size: 3.5rem;
     font-weight: 700;
     margin-bottom: var(--spacing-sm);
-    background: linear-gradient(90deg, var(--accent-green), var(--accent-blue), var(--accent-purple), #ff0000, #ffff00, var(--accent-green));
+    background: linear-gradient(90deg, var(--accent-green), var(--accent-blue), var(--accent-purple), #ff0000, #ffff00);
     background-size: 300% 100%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    animation: colorShift 4s ease infinite;
+    animation: colorShift 2.5s linear infinite;
 }
 
 @keyframes colorShift {
     0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+    100% { background-position: 300% 50%; }
 }
 
 .hero-subtitle {
@@ -904,5 +903,24 @@ section {
     100% {
         opacity: 0;
         transform: translateY(-80px) scale(0.3);
+    }
+}
+
+/* Notification animations */
+@keyframes slideIn {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+@keyframes slideOut {
+    from { transform: translateX(0); opacity: 1; }
+    to { transform: translateX(100%); opacity: 0; }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
     }
 }

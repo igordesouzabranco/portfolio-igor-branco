@@ -4,8 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dev Igor Branco | Portfólio</title>
+    <meta name="description" content="Portfólio de Igor Branco - Desenvolvedor Full Stack especializado em React, Node.js e Python.">
+    <meta name="theme-color" content="#0d1117">
+    <meta property="og:title" content="Dev Igor Branco | Portfólio">
+    <meta property="og:description" content="Desenvolvedor Full Stack especializado em React, Node.js e Python.">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&display=swap" as="style">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&display=swap">
     <link rel="stylesheet" href="assets/css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
@@ -14,14 +21,14 @@
             <div class="logo">
                 <span class="prompt">&gt;</span> <span class="logo-name">Dev Igor Branco</span>
             </div>
-            <nav class="nav">
+            <nav class="nav" id="nav-menu">
                 <a href="#home" class="nav-link active">home</a>
                 <a href="#skills" class="nav-link">skills</a>
                 <a href="#projects" class="nav-link">projetos</a>
                 <a href="#about" class="nav-link">sobre</a>
                 <a href="#contact" class="nav-link">contato</a>
             </nav>
-            <button class="menu-toggle" aria-label="Menu">
+            <button class="menu-toggle" aria-label="Menu" aria-expanded="false" aria-controls="nav-menu">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -136,7 +143,7 @@
                                 <span class="tag">Node.js</span>
                                 <span class="tag">MongoDB</span>
                             </div>
-                            <a href="https://github.com" target="_blank" class="project-link">
+                            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="project-link">
                                 <i class="fab fa-github"></i> Ver no GitHub
                             </a>
                         </div>
@@ -155,7 +162,7 @@
                                 <span class="tag">Django</span>
                                 <span class="tag">OpenAI</span>
                             </div>
-                            <a href="https://github.com" target="_blank" class="project-link">
+                            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="project-link">
                                 <i class="fab fa-github"></i> Ver no GitHub
                             </a>
                         </div>
@@ -173,7 +180,7 @@
                                 <span class="tag">React Native</span>
                                 <span class="tag">Firebase</span>
                             </div>
-                            <a href="https://github.com" target="_blank" class="project-link">
+                            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="project-link">
                                 <i class="fab fa-github"></i> Ver no GitHub
                             </a>
                         </div>
@@ -189,7 +196,7 @@
                 </h2>
                 <div class="about-content">
                     <div class="pixel-art-container">
-                        <img src="assets/img/igorpixel.png" alt="Igor Branco Pixel Art" class="pixel-art">
+                        <img src="assets/img/igorpixel.png" alt="Igor Branco Pixel Art" class="pixel-art" width="200" height="200" loading="lazy">
                         <div class="speech-bubbles">
                             <div class="bubble bubble-1">git push...</div>
                             <div class="bubble bubble-2">npm install...</div>
@@ -243,15 +250,19 @@
                             <a href="mailto:igordesouzabranco@gmail.com" class="contact-link">
                                 <i class="fas fa-envelope"></i> igordesouzabranco@gmail.com
                             </a>
-                            <a href="https://github.com/igordesouzabranco" target="_blank" class="contact-link">
+                            <a href="https://github.com/igordesouzabranco" target="_blank" rel="noopener noreferrer" class="contact-link">
                                 <i class="fab fa-github"></i> github.com/igordesouzabranco
                             </a>
-                            <a href="https://linkedin.com/in/igor-de-souza-branco-b68630314" target="_blank" class="contact-link">
+                            <a href="https://linkedin.com/in/igor-de-souza-branco-b68630314" target="_blank" rel="noopener noreferrer" class="contact-link">
                                 <i class="fab fa-linkedin"></i> linkedin.com/in/igordesouzabranco
                             </a>
                         </div>
                     </div>
-                    <form class="contact-form">
+                    <form class="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                        <input type="hidden" name="form-name" value="contact">
+                        <p class="hidden" style="display:none">
+                            <label>Don't fill this out: <input name="bot-field"></label>
+                        </p>
                         <div class="form-group">
                             <label for="name">
                                 <span class="prompt">&gt;</span> Nome
@@ -282,12 +293,12 @@
     <footer class="footer">
         <div class="container">
             <p>
-                <span class="prompt"></span> © 2026 Dev Igor Branco 
+                <span class="prompt">&gt;</span> © 2026 Dev Igor Branco
             </p>
         </div>
     </footer>
 
-    <script src="assets/js/script.js"></script>
-    <script src="assets/js/msg.js"></script>
+    <script src="assets/js/script.js" defer></script>
+    <script src="assets/js/msg.js" defer></script>
 </body>
 </html>

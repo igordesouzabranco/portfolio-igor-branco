@@ -5,6 +5,8 @@ const nav = document.querySelector('.nav');
 menuToggle.addEventListener('click', () => {
     nav.classList.toggle('active');
     menuToggle.classList.toggle('active');
+    const isExpanded = nav.classList.contains('active');
+    menuToggle.setAttribute('aria-expanded', isExpanded);
 });
 
 // Close menu when clicking on a link
@@ -18,8 +20,12 @@ document.querySelectorAll('.nav-link').forEach(link => {
 // Active navigation link based on scroll position
 const sections = document.querySelectorAll('section');
 const navLinks = document.querySelectorAll('.nav-link');
+const skillBars = document.querySelectorAll('.skill-bar');
+const header = document.querySelector('.header');
 
-function updateActiveLink() {
+let scrollTicking = false;
+
+function onScroll() {
     const scrollPosition = window.scrollY + 100;
 
     sections.forEach(section => {
@@ -37,7 +43,6 @@ function updateActiveLink() {
         }
     });
 
-    const header = document.querySelector('.header');
     const hero = document.querySelector('.hero');
     if (hero && header) {
         const heroBottom = hero.offsetTop + hero.offsetHeight;
@@ -47,27 +52,32 @@ function updateActiveLink() {
             header.classList.remove('scrolled');
         }
     }
-}
 
-window.addEventListener('scroll', updateActiveLink);
+    if (window.pageYOffset > 50) {
+        header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.3)';
+    } else {
+        header.style.boxShadow = 'none';
+    }
 
-// Skill bars animation on scroll
-const skillBars = document.querySelectorAll('.skill-bar');
-
-function animateSkillBars() {
     skillBars.forEach(bar => {
         const rect = bar.getBoundingClientRect();
-        const windowHeight = window.innerHeight;
-
-        if (rect.top < windowHeight - 100) {
+        if (rect.top < window.innerHeight - 100) {
             const level = bar.getAttribute('data-level');
             bar.style.width = `${level}%`;
         }
     });
+
+    scrollTicking = false;
 }
 
-window.addEventListener('scroll', animateSkillBars);
-window.addEventListener('load', animateSkillBars);
+window.addEventListener('scroll', () => {
+    if (!scrollTicking) {
+        requestAnimationFrame(onScroll);
+        scrollTicking = true;
+    }
+});
+
+window.addEventListener('load', onScroll);
 
 // Typing effect for terminal
 const typingElement = document.querySelector('.typing');
@@ -296,32 +306,6 @@ function showNotification(message, type = 'info') {
         setTimeout(() => notification.remove(), 300);
     }, 3000);
 }
-
-// Add animation keyframes
-const animStyle = document.createElement('style');
-animStyle.textContent = `
-    @keyframes slideIn {
-        from { transform: translateX(100%); opacity: 0; }
-        to { transform: translateX(0); opacity: 1; }
-    }
-    @keyframes slideOut {
-        from { transform: translateX(0); opacity: 1; }
-        to { transform: translateX(100%); opacity: 0; }
-    }
-`;
-document.head.appendChild(animStyle);
-
-// Header scroll effect
-const header = document.querySelector('.header');
-
-window.addEventListener('scroll', () => {
-    const currentScroll = window.pageYOffset;
-    if (currentScroll > 50) {
-        header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.3)';
-    } else {
-        header.style.boxShadow = 'none';
-    }
-});
 
 // Project cards hover effect
 document.querySelectorAll('.project-card').forEach(card => {
