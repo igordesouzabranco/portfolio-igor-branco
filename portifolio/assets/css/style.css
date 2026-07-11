@@ -434,6 +434,11 @@ section {
     text-decoration: none;
     font-size: 0.875rem;
     transition: var(--transition-fast);
+    background: none;
+    border: none;
+    font-family: inherit;
+    cursor: pointer;
+    padding: 0;
 }
 
 .project-link:hover {
@@ -642,6 +647,10 @@ section {
     .btn {
         width: 100%;
         justify-content: center;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
     }
 }
 

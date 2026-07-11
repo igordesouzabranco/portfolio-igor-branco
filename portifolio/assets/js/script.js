@@ -22,6 +22,7 @@ const sections = document.querySelectorAll('section');
 const navLinks = document.querySelectorAll('.nav-link');
 const skillBars = document.querySelectorAll('.skill-bar');
 const header = document.querySelector('.header');
+const backToTop = document.querySelector('.back-to-top');
 
 let scrollTicking = false;
 
@@ -66,6 +67,14 @@ function onScroll() {
             bar.style.width = `${level}%`;
         }
     });
+
+    if (backToTop) {
+        if (window.scrollY > 300) {
+            backToTop.classList.add('visible');
+        } else {
+            backToTop.classList.remove('visible');
+        }
+    }
 
     scrollTicking = false;
 }
@@ -338,17 +347,7 @@ document.querySelectorAll('.skill-card').forEach(card => {
 console.log('%c Dev Igor Branco - Portfólio ', 'background: #3fb950; color: #0d1117; font-size: 14px; padding: 8px 12px; border-radius: 4px; font-family: monospace;');
 
 // Back to Top button
-const backToTop = document.querySelector('.back-to-top');
-
 if (backToTop) {
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 300) {
-            backToTop.classList.add('visible');
-        } else {
-            backToTop.classList.remove('visible');
-        }
-    });
-
     backToTop.addEventListener('click', () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
