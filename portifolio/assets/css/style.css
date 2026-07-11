@@ -956,42 +956,51 @@ section {
     box-shadow: 0 8px 25px rgba(63, 185, 80, 0.5);
 }
 
-/* Experience Timeline */
+/* Experience Timeline Horizontal */
 .experience {
     padding: var(--spacing-2xl) 0;
 }
 
-.timeline {
+.timeline-horizontal {
     position: relative;
-    max-width: 800px;
+    max-width: 1000px;
     margin: 0 auto;
-    padding: var(--spacing-lg) 0;
+    overflow-x: auto;
+    padding: var(--spacing-xl) 0;
 }
 
-.timeline::before {
-    content: '';
+.timeline-track {
     position: absolute;
-    left: 50%;
-    top: 0;
-    bottom: 0;
-    width: 2px;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 2px;
     background: var(--border-color);
-    transform: translateX(-50%);
+    transform: translateY(-50%);
+}
+
+.timeline-items {
+    display: flex;
+    gap: var(--spacing-xl);
+    padding: 0 var(--spacing-lg);
+    position: relative;
 }
 
 .timeline-item {
+    flex: 0 0 auto;
+    min-width: 300px;
+    max-width: 350px;
     position: relative;
-    width: 50%;
-    padding: var(--spacing-md) var(--spacing-xl);
 }
 
 .timeline-item:nth-child(odd) {
-    left: 0;
-    text-align: right;
+    align-self: flex-start;
+    padding-bottom: var(--spacing-2xl);
 }
 
 .timeline-item:nth-child(even) {
-    left: 50%;
+    align-self: flex-end;
+    padding-top: var(--spacing-2xl);
 }
 
 .timeline-dot {
@@ -1001,16 +1010,17 @@ section {
     background-color: var(--accent-green);
     border: 3px solid var(--bg-primary);
     border-radius: 50%;
-    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
     z-index: 1;
 }
 
 .timeline-item:nth-child(odd) .timeline-dot {
-    right: -8px;
+    bottom: calc(50% - 8px);
 }
 
 .timeline-item:nth-child(even) .timeline-dot {
-    left: -8px;
+    top: calc(50% - 8px);
 }
 
 .timeline-content {
@@ -1060,8 +1070,31 @@ section {
     gap: var(--spacing-xs);
 }
 
-.timeline-item:nth-child(odd) .timeline-tags {
-    justify-content: flex-end;
+/* Timeline Responsive */
+@media (max-width: 768px) {
+    .timeline-items {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .timeline-track {
+        display: none;
+    }
+
+    .timeline-dot {
+        display: none;
+    }
+
+    .timeline-item {
+        max-width: 100%;
+        min-width: 0;
+    }
+
+    .timeline-item:nth-child(odd),
+    .timeline-item:nth-child(even) {
+        align-self: center;
+        padding: 0;
+    }
 }
 
 /* Project Modal */
@@ -1212,34 +1245,6 @@ section {
 .error-description {
     color: var(--text-secondary);
     margin-bottom: var(--spacing-xl);
-}
-
-/* Timeline Responsive */
-@media (max-width: 768px) {
-    .timeline::before {
-        left: 20px;
-    }
-
-    .timeline-item {
-        width: 100%;
-        padding-left: 50px;
-        padding-right: var(--spacing-md);
-        left: 0 !important;
-        text-align: left !important;
-    }
-
-    .timeline-dot {
-        left: 12px !important;
-        right: auto !important;
-    }
-
-    .timeline-item:nth-child(odd) .timeline-tags {
-        justify-content: flex-start;
-    }
-
-    .hero-buttons {
-        justify-content: center;
-    }
 }
 
 /* Firework animation */
