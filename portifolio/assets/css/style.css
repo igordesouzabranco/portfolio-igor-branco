@@ -1169,6 +1169,18 @@ section {
     padding: var(--spacing-xl);
 }
 
+.error-code {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    font-size: 3rem;
+    font-weight: 700;
+    background: linear-gradient(90deg, var(--accent-green), var(--accent-blue));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
 .error-container {
     text-align: center;
     max-width: 600px;
@@ -1181,16 +1193,6 @@ section {
 
 .error-output {
     color: var(--accent-red);
-}
-
-.error-code {
-    font-size: 6rem;
-    font-weight: 700;
-    background: linear-gradient(90deg, var(--accent-green), var(--accent-blue));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin-bottom: var(--spacing-md);
 }
 
 .error-message {
