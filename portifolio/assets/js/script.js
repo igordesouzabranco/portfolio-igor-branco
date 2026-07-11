@@ -372,12 +372,19 @@ if (backToTop) {
 
 // Project Modal
 const projectData = {
-    'api-books': {
-        title: 'APIBooks',
-        icon: '<i class="fas fa-book"></i>',
-        description: 'API REST simples que manipula dados de livros. Permite buscar, criar, editar e deletar registros. Desenvolvida com Flask, Marshmallow para serialização e SQLAlchemy para ORM.',
-        tags: ['Python', 'Flask', 'Marshmallow', 'SQLAlchemy'],
-        github: 'https://github.com/igordesouzabranco/APIBooks'
+    'calc-imc': {
+        title: 'CalcIMC',
+        icon: '<i class="fas fa-calculator"></i>',
+        description: 'Calculadora de Índice de Massa Corporal (IMC) desenvolvida com JavaScript puro. O usuário insere peso e altura e o sistema calcula o IMC com a classificação correspondente.',
+        tags: ['JavaScript', 'HTML5', 'CSS3'],
+        github: 'https://github.com/igordesouzabranco/calcIMC'
+    },
+    'val-cpf': {
+        title: 'ValCPF',
+        icon: '<i class="fas fa-id-card"></i>',
+        description: 'Validador de CPF desenvolvido com JavaScript, HTML e CSS. Verifica a validade do CPF através do cálculo dos dígitos verificadores seguindo a legislação brasileira.',
+        tags: ['JavaScript', 'HTML5', 'CSS3'],
+        github: 'https://github.com/igordesouzabranco/ValCPF'
     },
     'django-cad': {
         title: 'DjangoCad',
@@ -385,13 +392,6 @@ const projectData = {
         description: 'Sistema de cadastro web desenvolvido com Django. Inclui operações CRUD completas, autenticação de usuários e interface responsiva.',
         tags: ['Python', 'Django', 'SQLite', 'HTML'],
         github: 'https://github.com/igordesouzabranco/DjangoCad'
-    },
-    'agenda': {
-        title: 'ManipuladorAgenda',
-        icon: '<i class="fas fa-address-book"></i>',
-        description: 'Manipulador de agenda completo. O usuário pode criar, editar, excluir contatos e suas informações. Permite exportar para arquivo TXT ou JSON, e importar contatos de um arquivo JSON.',
-        tags: ['Python', 'JSON', 'CRUD', 'Arquivos'],
-        github: 'https://github.com/igordesouzabranco/ManipuladorAgenda'
     }
 };
 
