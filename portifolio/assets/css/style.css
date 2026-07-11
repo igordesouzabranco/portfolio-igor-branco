@@ -342,6 +342,19 @@ section {
     transition: var(--transition-fast);
 }
 
+.skill-icon-ts {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #3178c6;
+    background-color: var(--bg-tertiary);
+    width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-md);
+}
+
 .skill-name {
     font-size: 1.25rem;
     margin-bottom: var(--spacing-sm);
@@ -578,6 +591,40 @@ section {
     text-align: center;
     color: var(--text-muted);
     font-size: 0.875rem;
+}
+
+.footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.animations-toggle {
+    background: none;
+    border: 1px solid var(--border-color);
+    color: var(--text-muted);
+    padding: var(--spacing-xs) var(--spacing-md);
+    border-radius: var(--radius-md);
+    font-family: inherit;
+    font-size: 0.75rem;
+    cursor: pointer;
+    transition: var(--transition-fast);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
+
+.animations-toggle:hover {
+    border-color: var(--accent-green);
+    color: var(--accent-green);
+}
+
+body.animations-disabled *,
+body.animations-disabled *::before,
+body.animations-disabled *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
 }
 
 /* Responsive Design */
@@ -1051,6 +1098,11 @@ section {
 @media (max-width: 768px) {
     .timeline-items {
         grid-template-columns: 1fr;
+    }
+
+    .footer .container {
+        flex-direction: column;
+        gap: var(--spacing-md);
     }
 }
 

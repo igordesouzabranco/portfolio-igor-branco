@@ -346,6 +346,23 @@ document.querySelectorAll('.skill-card').forEach(card => {
 // Console Easter egg
 console.log('%c Dev Igor Branco - Portfólio ', 'background: #3fb950; color: #0d1117; font-size: 14px; padding: 8px 12px; border-radius: 4px; font-family: monospace;');
 
+// Animations toggle
+const animationsToggle = document.getElementById('animationsToggle');
+if (animationsToggle) {
+    const savedState = localStorage.getItem('animationsDisabled');
+    if (savedState === 'true') {
+        document.body.classList.add('animations-disabled');
+        animationsToggle.querySelector('.toggle-text').textContent = 'Ligar animações';
+    }
+
+    animationsToggle.addEventListener('click', () => {
+        document.body.classList.toggle('animations-disabled');
+        const isDisabled = document.body.classList.contains('animations-disabled');
+        localStorage.setItem('animationsDisabled', isDisabled);
+        animationsToggle.querySelector('.toggle-text').textContent = isDisabled ? 'Ligar animações' : 'Desligar animações';
+    });
+}
+
 // Back to Top button
 if (backToTop) {
     backToTop.addEventListener('click', () => {
