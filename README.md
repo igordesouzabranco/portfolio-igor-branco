@@ -62,15 +62,9 @@ Portfolio profissional desenvolvido com HTML, CSS e JavaScript puro, sem framewo
 | Modal de projetos | Criacao dinamica de conteudo, event delegation, teclado (ESC) |
 | Easter eggs e interacoes | Eventos de teclado, geracao aleatoria de conteudo, animacoes programaticas |
 
-## Screenshots
+## Screenshot
 
-<!-- Insera um screenshot ou GIF do site aqui. Sugestoes: -->
-<!-- - Captura da hero section com o terminal -->
-<!-- - Captura da secao de projetos com os cards -->
-<!-- - GIF curto mostrando a navegacao e animacoes -->
-<!-- Caminho sugerido: assets/img/screenshot-hero.png -->
-
-![Portfólio Igor Branco](assets/img/igorpixel.png)
+![Portfólio Igor Branco](portifolio/assets/img/siteheroscreenshot.png)
 
 ## Como rodar localmente
 
