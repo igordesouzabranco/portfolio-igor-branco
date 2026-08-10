@@ -379,12 +379,12 @@ const projectData = {
         tags: ['JavaScript', 'HTML5', 'CSS3'],
         github: 'https://github.com/igordesouzabranco/calcIMC'
     },
-    'val-cpf': {
-        title: 'ValCPF',
-        icon: '<i class="fas fa-id-card"></i>',
-        description: 'Validador de CPF desenvolvido com JavaScript, HTML e CSS. Verifica a validade do CPF através do cálculo dos dígitos verificadores seguindo a legislação brasileira.',
-        tags: ['JavaScript', 'HTML5', 'CSS3'],
-        github: 'https://github.com/igordesouzabranco/ValCPF'
+    'origo-api': {
+        title: 'Origo API',
+        icon: '<i class="fas fa-network-wired"></i>',
+        description: 'A Origo API é o meu primeiro projeto em Java, criado como parte do meu portfolio pessoal com foco em fintech e logística. O objetivo é construir uma API REST completa com persistência em PostgreSQL, tratamento de erros limpo e boas práticas de desenvolvimento.',
+        tags: ['Java', 'Spring', 'PostgreSQL'],
+        github: 'https://github.com/igordesouzabranco/origo-api'
     },
     'django-cad': {
         title: 'DjangoCad',
