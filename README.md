@@ -26,7 +26,7 @@ Portfolio profissional desenvolvido com HTML, CSS e JavaScript puro, sem framewo
 - **Barra de skills com animacao** — barras de progresso que se preenchem ao entrar no viewport
 - **Timeline de experiencias** — exibe trajetoria profissional e formacao academica
 - **Secao de certificados** — cursos em andamento com tags de tecnologias abordadas
-- **Cards de projetos com modal** — CalcIMC, ValCPF e DjangoCad com detalhes e link para o GitHub
+- **Cards de projetos com modal** — CalcIMC, Origo API e DjangoCad com detalhes e link para o GitHub
 - **Pixel art com speech bubbles** — animacao interativa no hover com comandos de terminal aleatorios
 - **Formulario de contato** — integrado ao Netlify Forms, envio via fetch() com notificacoes visuais
 - **Botao voltar ao topo** — aparece automaticamente apos rolar a pagina
@@ -50,8 +50,8 @@ Portfolio profissional desenvolvido com HTML, CSS e JavaScript puro, sem framewo
 
 | Funcionalidade | Competencia tecnica |
 |---|---|
-| Validador de CPF/CNPJ (ValCPF) | Logica algoritmica, manipulacao de strings, algoritmo de digitos verificadores |
 | Calculadora de IMC (CalcIMC) | Matematica aplicada, validacao de entrada, manipulacao de DOM |
+| Origo API (Java/Spring) | API REST, persistencia em PostgreSQL, tratamento de erros, boas praticas de desenvolvimento |
 | Sistema de cadastro Django (DjangoCad) | CRUD completo, autenticacao, modelagem de banco de dados, Python/Django |
 | Navegacao com scroll tracking | Event listeners, requestAnimationFrame, deteccao de viewport |
 | Terminal com efeito de digitacao | Manipulacao de strings, setTimeout/setInterval, logica de state |

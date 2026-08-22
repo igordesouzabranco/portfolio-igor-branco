@@ -619,6 +619,47 @@ section {
     color: var(--accent-green);
 }
 
+.header.has-shadow {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.contact-link-with-copy {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    width: 100%;
+}
+
+.contact-link-with-copy .contact-link {
+    flex: 1;
+    margin: 0;
+}
+
+.copy-email-btn {
+    background: transparent;
+    border: none;
+    padding: 0.35rem;
+    margin-left: 0.15rem;
+    border-radius: var(--radius-sm, 4px);
+    color: var(--text-muted, #8b949e);
+    cursor: pointer;
+    font-size: 0.85rem;
+    line-height: 1;
+    opacity: 0.55;
+    transition: color 0.15s ease, opacity 0.15s ease, background 0.15s ease;
+}
+
+.copy-email-btn:hover {
+    color: var(--accent-blue, #58a6ff);
+    opacity: 1;
+    background: rgba(88, 166, 255, 0.08);
+}
+
+.copy-email-btn.is-copied {
+    color: var(--accent-green, #3fb950);
+    opacity: 1;
+}
+
 body.animations-disabled *,
 body.animations-disabled *::before,
 body.animations-disabled *::after {
@@ -1375,9 +1416,4 @@ body.animations-disabled *::after {
     }
 }
 
-/* Disable custom cursor when animations are disabled */
-body.animations-disabled * {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-}
+/* animations-disabled is already defined above (single source of truth) */

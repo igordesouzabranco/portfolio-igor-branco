@@ -1,3 +1,26 @@
+const WHATSAPP_NUMERO = "51991299044";
+const WHATSAPP_MENSAGEM = "Olá Igor! Vim através do seu portfólio.";
+// ============================================================
+
+// Inicializa link do WhatsApp (só aparece se o número for configurado)
+(function initWhatsApp() {
+    const link = document.getElementById('whatsappLink');
+    const text = document.getElementById('whatsappText');
+    if (!link || !text) return;
+    if (!WHATSAPP_NUMERO || !/^\d{10,13}$/.test(WHATSAPP_NUMERO)) return;
+
+    const ddi = WHATSAPP_NUMERO.startsWith('55') ? WHATSAPP_NUMERO : '55' + WHATSAPP_NUMERO;
+    link.href = `https://wa.me/${ddi}?text=${encodeURIComponent(WHATSAPP_MENSAGEM)}`;
+
+    const n = WHATSAPP_NUMERO.replace(/^55/, '');
+    let formatado;
+    if (n.length === 11)      formatado = `(${n.slice(0,2)}) ${n.slice(2,7)}-${n.slice(7)}`;
+    else if (n.length === 10) formatado = `(${n.slice(0,2)}) ${n.slice(2,6)}-${n.slice(6)}`;
+    else                      formatado = `+${WHATSAPP_NUMERO}`;
+    text.textContent = formatado;
+    link.style.display = 'flex';
+})();
+
 // Mobile Menu Toggle
 const menuToggle = document.querySelector('.menu-toggle');
 const nav = document.querySelector('.nav');
@@ -55,9 +78,9 @@ function onScroll() {
     }
 
     if (window.pageYOffset > 50) {
-        header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.3)';
+        header.classList.add('has-shadow');
     } else {
-        header.style.boxShadow = 'none';
+        header.classList.remove('has-shadow');
     }
 
     skillBars.forEach(bar => {
@@ -316,32 +339,10 @@ function showNotification(message, type = 'info') {
     }, 3000);
 }
 
-// Project cards hover effect
-document.querySelectorAll('.project-card').forEach(card => {
-    card.addEventListener('mouseenter', function() {
-        this.style.transform = 'translateY(-10px) scale(1.02)';
-    });
-    card.addEventListener('mouseleave', function() {
-        this.style.transform = 'translateY(0) scale(1)';
-    });
-});
-
-// Skill cards tilt effect
-document.querySelectorAll('.skill-card').forEach(card => {
-    card.addEventListener('mousemove', function(e) {
-        const rect = this.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        const centerX = rect.width / 2;
-        const centerY = rect.height / 2;
-        const rotateX = (y - centerY) / 10;
-        const rotateY = (centerX - x) / 10;
-        this.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-5px)`;
-    });
-    card.addEventListener('mouseleave', function() {
-        this.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0)';
-    });
-});
+// Efeitos de hover em project-card e skill-card usam CSS Puro
+//   → style.css (.project-card:hover / .skill-card:hover)
+//   Vantagens: respeita .animations-disabled + prefers-reduced-motion,
+//              sem conflito de transform inline, melhor performance.
 
 // Console Easter egg
 console.log('%c Dev Igor Branco - Portfólio ', 'background: #3fb950; color: #0d1117; font-size: 14px; padding: 8px 12px; border-radius: 4px; font-family: monospace;');
