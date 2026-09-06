@@ -12,6 +12,7 @@ portifolio/          ← site root (deployed to Netlify)
     css/style.css    ← all styles (single file)
     js/script.js     ← scroll handlers, modal, animations, back-to-top
     js/msg.js        ← Netlify Forms submission logic
+    js/github.js     ← busca e renderiza últimos commits públicos do GitHub
     img/             ← pixel art and images
     cv/cv.pdf        ← user's CV for download
 ```
@@ -46,6 +47,12 @@ All user-facing text is **Portuguese (pt-BR)**. Never write English in HTML/CSS/
 - All JS uses `defer`
 - Single scroll listener with `requestAnimationFrame` (do not add more scroll listeners)
 - Do not add unused font imports
+
+### GitHub Activity (Section #now)
+- Fetches recent commits via GitHub REST API: `/users/{username}/repos?sort=pushed` + `/repos/{owner}/{repo}/commits`
+- No authentication required — public endpoints, 60 req/hour rate limit per IP
+- Cache stored in `sessionStorage` (5-minute TTL) to avoid redundant requests
+- Data source: all public repos of `igordesouzabranco`, sorted by most recently pushed
 
 ### GitHub CLI
 - Located at: `C:\Program Files\GitHub CLI\gh.exe`

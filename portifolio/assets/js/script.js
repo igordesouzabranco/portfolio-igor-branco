@@ -64,6 +64,9 @@ function onScroll() {
                     link.classList.add('active');
                 }
             });
+            section.classList.add('visible');
+        } else {
+            section.classList.remove('visible');
         }
     });
 

@@ -26,6 +26,7 @@
                 <a href="#skills" class="nav-link">skills</a>
                 <a href="#experience" class="nav-link">experiências</a>
                 <a href="#certificates" class="nav-link">certificados</a>
+                <a href="#now" class="nav-link">commit</a>
                 <a href="#projects" class="nav-link">projetos</a>
                 <a href="#about" class="nav-link">sobre</a>
                 <a href="#contact" class="nav-link">contato</a>
@@ -255,6 +256,46 @@
             </div>
         </section>
 
+        <section id="now" class="now">
+            <div class="container">
+                <h2 class="section-title">
+                    <span class="prompt">&gt;</span> Último commit
+                </h2>
+                <div class="now-content">
+                    <div class="now-info">
+                        <p class="now-description" id="nowRepoName">
+                            <span class="comment">// Repo:</span> ---
+                        </p>
+                        <p class="now-description" id="nowCommitDate">
+                            <span class="comment">// Data:</span> ---
+                        </p>
+                        <p class="now-description" id="nowCommitSha">
+                            <span class="comment">// Commit:</span> ---
+                        </p>
+                        <a href="https://github.com/igordesouzabranco" target="_blank" rel="noopener noreferrer" class="project-link now-github-link">
+                            <i class="fab fa-github"></i> Ver mais no GitHub
+                        </a>
+                    </div>
+                    <div class="now-terminal">
+                        <div class="terminal-header">
+                            <div class="terminal-buttons">
+                                <span class="btn-close"></span>
+                                <span class="btn-minimize"></span>
+                                <span class="btn-maximize"></span>
+                            </div>
+                            <span class="terminal-title">igor@dev:~</span>
+                        </div>
+                        <div class="terminal-body">
+                            <p><span class="prompt">&gt;</span> git log --oneline -n 1</p>
+                            <div id="commitsList" class="commits-list">
+                                <p class="output">Carregando...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section id="projects" class="projects">
             <div class="container">
                 <h2 class="section-title">
@@ -470,5 +511,6 @@
 
     <script src="assets/js/script.js" defer></script>
     <script src="assets/js/msg.js" defer></script>
+    <script src="assets/js/github.js" defer></script>
 </body>
 </html>

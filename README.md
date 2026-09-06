@@ -27,6 +27,7 @@ Portfolio profissional desenvolvido com HTML, CSS e JavaScript puro, sem framewo
 - **Timeline de experiencias** — exibe trajetoria profissional e formacao academica
 - **Secao de certificados** — cursos em andamento com tags de tecnologias abordadas
 - **Cards de projetos com modal** — CalcIMC, Origo API e DjangoCad com detalhes e link para o GitHub
+- **Atividade recente no GitHub** — secao "No que estou trabalhando agora" que busca os ultimos commits publicos via GitHub API e exibe em estilo terminal, com efeito de gradiente animado ao passar o mouse (igual ao hover dos cards de skills/projetos)
 - **Pixel art com speech bubbles** — animacao interativa no hover com comandos de terminal aleatorios
 - **Formulario de contato** — integrado ao Netlify Forms, envio via fetch() com notificacoes visuais
 - **Botao voltar ao topo** — aparece automaticamente apos rolar a pagina
@@ -45,6 +46,7 @@ Portfolio profissional desenvolvido com HTML, CSS e JavaScript puro, sem framewo
 | Font Awesome | Icones para nav, skills, projetos e contato |
 | Google Fonts | Fira Code (unica fonte, preloaded) |
 | Netlify | Hospedagem, Netlify Forms, deploy automatico via GitHub |
+| GitHub REST API (publica) | Busca dos ultimos commits para a secao "Agora", sem autenticacao |
 
 ## Habilidades demonstradas
 
@@ -61,6 +63,7 @@ Portfolio profissional desenvolvido com HTML, CSS e JavaScript puro, sem framewo
 | Menu responsivo | Media queries, toggle de classes, acessibilidade (aria-expanded) |
 | Modal de projetos | Criacao dinamica de conteudo, event delegation, teclado (ESC) |
 | Easter eggs e interacoes | Eventos de teclado, geracao aleatoria de conteudo, animacoes programaticas |
+| Secao "No que estou trabalhando agora" | Consumo de API REST publica, fetch assincrono, cache em sessionStorage, tratamento de erros de rede |
 
 ## Screenshot
 
