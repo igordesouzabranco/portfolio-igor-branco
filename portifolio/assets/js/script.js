@@ -376,12 +376,12 @@ if (backToTop) {
 
 // Project Modal
 const projectData = {
-    'calc-imc': {
-        title: 'CalcIMC',
-        icon: '<i class="fas fa-calculator"></i>',
-        description: 'Calculadora de Índice de Massa Corporal (IMC) desenvolvida com JavaScript puro. O usuário insere peso e altura e o sistema calcula o IMC com a classificação correspondente.',
-        tags: ['JavaScript', 'HTML5', 'CSS3'],
-        github: 'https://github.com/igordesouzabranco/calcIMC'
+    'cont-js': {
+        title: 'ContJS',
+        icon: '<i class="fas fa-address-book"></i>',
+        description: 'Aplicação full stack em Node.js para gerenciar contatos pessoais, com autenticação, proteção CSRF e deploy no Render. Utiliza Express + EJS no backend, MongoDB Atlas para persistência, sessões com express-session + connect-mongo, e build de assets com Webpack + Babel.',
+        tags: ['Node.js', 'Express', 'MongoDB', 'JavaScript'],
+        github: 'https://github.com/igordesouzabranco/cont-js'
     },
     'origo-api': {
         title: 'Origo API',
