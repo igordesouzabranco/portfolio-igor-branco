@@ -26,7 +26,7 @@ Portfólio profissional desenvolvido com HTML, CSS e JavaScript puro, sem framew
 - **Barra de skills com animação** — barras de progresso que se preenchem ao entrar no viewport
 - **Timeline de experiências** — exibe trajetória profissional e formação acadêmica
 - **Seção de certificados** — cursos em andamento com tags de tecnologias abordadas
-- **Cards de projetos com modal** — ContJS, Origo API e DjangoCad com detalhes e link para o GitHub
+- **Cards de projetos com modal** — ContJS, Origo API e Collegium API com detalhes e link para o GitHub
 - **Atividade recente no GitHub** — seção "No que estou trabalhando agora" que busca os últimos commits públicos via GitHub API e exibe em estilo terminal, com efeito de gradiente animado ao passar o mouse (igual ao hover dos cards de skills/projetos)
 - **Pixel art com speech bubbles** — animação interativa no hover com comandos de terminal aleatórios
 - **Formulário de contato** — integrado ao Netlify Forms, envio via fetch() com notificações visuais
@@ -54,7 +54,7 @@ Portfólio profissional desenvolvido com HTML, CSS e JavaScript puro, sem framew
 |---|---|
 | ContJS (Node.js/Express/MongoDB) | Autenticação, proteção CSRF, CRUD, multi-tenant, deploy no Render |
 | Origo API (Java/Spring) | API REST, persistência em PostgreSQL, tratamento de erros, boas práticas de desenvolvimento |
-| Sistema de cadastro Django (DjangoCad) | CRUD completo, autenticação, formação de banco de dados, Python/Django |
+| Collegium API (Node.js/Express/Sequelize) | API REST, CRUD completo, autenticação JWT, papéis de acesso, regras de negócio, MariaDB |
 | Navegação com scroll tracking | Event listeners, requestAnimationFrame, detecção de viewport |
 | Terminal com efeito de digitação | Manipulação de strings, setTimeout/setInterval, lógica de state |
 | Formulário com Netlify Forms | Fetch API, FormData, tratamento de erros, integração com backend |

@@ -390,12 +390,12 @@ const projectData = {
         tags: ['Java', 'Spring', 'PostgreSQL'],
         github: 'https://github.com/igordesouzabranco/origo-api'
     },
-    'django-cad': {
-        title: 'DjangoCad',
-        icon: '<i class="fas fa-database"></i>',
-        description: 'Sistema de cadastro web desenvolvido com Django. Inclui operações CRUD completas, autenticação de usuários e interface responsiva.',
-        tags: ['Python', 'Django', 'SQLite', 'HTML'],
-        github: 'https://github.com/igordesouzabranco/DjangoCad'
+    'collegium-api': {
+        title: 'Collegium API',
+        icon: '<i class="fas fa-graduation-cap"></i>',
+        description: 'API REST de gestão universitária de faculdade construída com Node.js, Express 5, Sequelize 6 e MariaDB. Cobre cursos, disciplinas, turmas, professores, alunos, avaliações, notas e presenças, com autenticação JWT, três papéis de acesso, boletim do aluno e rotas em lote dentro de transação. Deploy no Render com dados de demonstração e roteiro completo no Insomnia.',
+        tags: ['Node.js', 'Express', 'Sequelize', 'MariaDB'],
+        github: 'https://github.com/igordesouzabranco/collegium-api'
     }
 };
 

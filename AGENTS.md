@@ -60,6 +60,6 @@ All user-facing text is **Portuguese (pt-BR)**. Never write English in HTML/CSS/
 - Use `& "C:\Program Files\GitHub CLI\gh.exe" repo list` for repo queries
 
 ## Content Source
-- User's real projects are pinned in the portfolio (repos: calcIMC, Origo API, DjangoCad)
+- User's real projects are pinned in the portfolio (repos: calcIMC, Origo API, Collegium API)
 - CV data in `assets/cv/cv.pdf` is the source of truth for experience/skills
 - User provided pixel art image `igorpixel.png`
