@@ -53,50 +53,65 @@ if (contactForm) {
 }
 
 // ========== Botão copiar email (ícone minimalista) ==========
-const copyEmailBtns = document.querySelectorAll('.copy-email-btn');
-copyEmailBtns.forEach(btn => {
-    btn.addEventListener('click', async function() {
-        const email = this.dataset.email;
-        const icon = this.querySelector('i');
-        if (!email || !icon) return;
+// Seleciona ambos os tipos de botões em uma única lista
+const copyBtns = document.querySelectorAll('.copy-email-btn, .npx');
 
-        const originalIconClass = icon.className;
-        let copiedOK = false;
+copyBtns.forEach(btn => {
+  btn.addEventListener('click', async function() {
 
-        // Tenta Clipboard API primeiro
-        if (navigator.clipboard) {
-            try {
-                await navigator.clipboard.writeText(email);
-                copiedOK = true;
-            } catch (_) { /* ignora, tenta fallback */ }
-        }
+    const textToCopy = this.dataset.email; 
+    const icon = this.querySelector('i');
+    
+    if (!textToCopy || !icon) return;
+    const originalIconClass = icon.className;
+    let copiedOK = false;
 
-        // Fallback: input temporário + execCommand
-        if (!copiedOK) {
-            try {
-                const tempInput = document.createElement('input');
-                tempInput.value = email;
-                tempInput.setAttribute('readonly', '');
-                tempInput.style.position = 'absolute';
-                tempInput.style.left = '-9999px';
-                document.body.appendChild(tempInput);
-                tempInput.select();
-                copiedOK = document.execCommand('copy');
-                document.body.removeChild(tempInput);
-            } catch (_) { copiedOK = false; }
-        }
+    // Tenta Clipboard API primeiro
+    if (navigator.clipboard) {
+      try {
+        await navigator.clipboard.writeText(textToCopy);
+        copiedOK = true;
+      } catch (_) { /* ignora, tenta fallback */ }
+    }
 
-        // Feedback visual
-        if (copiedOK) {
-            showNotification('Email copiado para a área de transferência!', 'success');
-            this.classList.add('is-copied');
-            icon.className = 'fas fa-check';
-            setTimeout(() => {
-                this.classList.remove('is-copied');
-                icon.className = originalIconClass;
-            }, 1800);
-        } else {
-            showNotification('Erro ao copiar email.', 'error');
-        }
-    });
+    // Fallback: input temporário + execCommand
+    if (!copiedOK) {
+      try {
+        const tempInput = document.createElement('input');
+        tempInput.value = textToCopy;
+        tempInput.setAttribute('readonly', '');
+        tempInput.style.position = 'absolute';
+        tempInput.style.left = '-9999px';
+        document.body.appendChild(tempInput);
+        tempInput.select();
+        copiedOK = document.execCommand('copy');
+        document.body.removeChild(tempInput);
+      } catch (_) {
+        copiedOK = false;
+      }
+    }
+
+    // Feedback visual
+    if (copiedOK) {
+      if (this.classList.contains('npx')) {
+        showNotification('Comando npx igor-portfolio copiado para a área de transferência!', 'success');
+      } else if (this.classList.contains('copy-email-btn')) {
+        showNotification('Email copiado para a área de transferência!', 'success');
+      }
+
+      this.classList.add('is-copied');
+      icon.className = 'fas fa-check';
+      
+      setTimeout(() => {
+        this.classList.remove('is-copied');
+        icon.className = originalIconClass;
+      }, 1800);
+    } else {
+      const errorMsg = this.classList.contains('npx') 
+        ? 'Erro ao copiar comando npx igor-portfolio.' 
+        : 'Erro ao copiar email.';
+      showNotification(errorMsg, 'error');
+    }
+  });
 });
+

@@ -672,13 +672,38 @@ section.visible .section-title .prompt {
     transition: color 0.15s ease, opacity 0.15s ease, background 0.15s ease;
 }
 
+.npx {
+    background: transparent;
+    border: none;
+    padding: 0.35rem;
+    margin-left: 0.15rem;
+    border-radius: var(--radius-sm, 4px);
+    color: var(--text-muted, #8b949e);
+    cursor: pointer;
+    font-size: 0.85rem;
+    line-height: 1;
+    opacity: 0.55;
+    transition: color 0.15s ease, opacity 0.15s ease, background 0.15s ease;
+}
+
 .copy-email-btn:hover {
     color: var(--accent-blue, #58a6ff);
     opacity: 1;
     background: rgba(88, 166, 255, 0.08);
 }
 
+.npx:hover {
+    color: var(--accent-blue, #58a6ff);
+    opacity: 1;
+    background: rgba(88, 166, 255, 0.08);
+}
+
 .copy-email-btn.is-copied {
+    color: var(--accent-green, #3fb950);
+    opacity: 1;
+}
+
+.npx.is-copied {
     color: var(--accent-green, #3fb950);
     opacity: 1;
 }
